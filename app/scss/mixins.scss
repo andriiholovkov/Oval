@@ -1,0 +1,81 @@
+@import "app/scss/loyaout.scss";
+
+/***** Paddings *****/
+@mixin padd-vert($pt: $spacing-03, $pb: $spacing-03) {
+    padding-top: $pt;
+    padding-bottom: $pb;
+}
+
+@mixin padd-hor($pl: $spacing-03, $pr: $spacing-03) {
+    padding-left: $pl;
+    padding-right: $pr;
+}
+
+@mixin padd-all($pt: $spacing-03, $pr: $spacing-03, $pb: $spacing-03, $pl: $spacing-03) {
+    padding-top: $pt;
+    padding-right: $pr;
+    padding-bottom: $pb;
+    padding-left: $pl;
+}
+
+@mixin h1_mobile {
+    font-family: $pr-font;
+    font-size: 38px;
+    line-height: 46px;
+    color: $black;
+    margin-bottom: 12px;
+}
+
+@mixin h1_tablet {
+    font-family: $pr-font;
+    font-size: 48px;
+    line-height: 60px;
+    color: $black;
+    margin-bottom: 24px;
+}
+
+@mixin h1_desktop {
+    font-family: $pr-font;
+    font-size: 60px;
+    line-height: 74px;
+    color: $black;
+    margin-bottom: 24px;
+}
+
+/***** Fonts *****/
+@mixin font-set-01($fz: 16px, $lh: 24px, $fw: 400) {
+    font-size: $fz;
+    line-height: $lh;
+    font-weight: $fw;
+}
+
+/***** Buttons *****/
+@mixin pr-btn {
+    font-size: 14px;
+    line-height: 18px;
+    color: $white;
+    background-color: $pr-btn-enabled;
+    border-radius: 4px;
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+
+
+/***** Paddings *****/
+@mixin spacing($space: $spacing-rg) {
+    padding-top: $space;
+    padding-bottom: $space;
+  }
+
+@mixin padding($pad: $indent-sm) {
+    padding-right: $pad;
+    padding-left: $pad;
+}
+
+$spacing-rg: 10px;
+@mixin spacing($space: $spacing-rg) {
+    padding-top: $space;
+    padding-bottom: $space;
+}

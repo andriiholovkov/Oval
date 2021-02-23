@@ -1,0 +1,293 @@
+@import "app/scss/reset.scss";
+@import "app/scss/fonts.scss";
+@import "app/scss/colors.scss";
+@import "app/scss/loyaout.scss";
+@import "app/scss/mixins.scss";
+@import "app/scss/archive.scss";
+
+.header {
+    @include padd-vert(24px, 24px);
+    display: flex;
+    justify-content: space-between;
+
+    .navigation {
+        display: flex;
+        align-items: center;
+
+        &__logo {
+            @media (min-width: $screen-desktop-min) {
+                margin-right: $loyaout-04;
+            }
+        }
+
+        &__list {
+            display: none;
+            @media (min-width: $screen-desktop-min) {
+                display: contents;
+            }
+        }
+
+        &__item {
+            display: inline-block;
+        }
+
+        &__item + .navigation__item {
+            margin-left: 36px;
+        }
+
+        &__link {
+            @media (min-width: $screen-desktop-min) {
+                @include font-set-01(14px, 18px, 400);
+                font-family: $sec-font;
+                color: $nav-link-enabled;
+            }
+        }
+    }
+
+    .btns {
+        display: flex;
+        align-items: center;
+
+        &__list {
+            display: none;
+            @media (min-width: $screen-tablet-min) {
+                display: flex;
+                margin-right: 32px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                margin-right: 0;
+            }
+        }
+        
+        &__item + .btns__item {
+            @media (min-width: $screen-tablet-min) {
+                margin-left: 12px;
+            }
+        }
+
+        &__login {
+            font-family: $sec-font;
+            @include font-set-01(14px, 18px, 400);
+            @include padd-all(10px, 14px, 10px, 14px);
+            color: $nav-link-enabled;
+            border-radius: 4px;
+        }
+
+        &__registration {
+            font-family: $sec-font;
+            @include font-set-01(14px, 18px, 600);
+            @include padd-all(10px, 14px, 10px, 14px);
+            color: $black;
+            border-radius: 4px;
+            border: 1px solid $sec-btn-enabled;
+        }
+
+        &__burger-menu {
+            @include padd-all(6px, 3px, 6px, 3px);
+            &::after {
+                content: "";
+                display: block;
+                width: 18px;
+                height: 12px;
+                background: url(svg/burger-menu.svg);
+            }
+
+            @media (min-width: $screen-desktop-min) {
+                display: none;
+            }
+        }
+    }
+}
+
+.simpler-tool {
+    @include padd-vert($spacing-04, $spacing-04);
+    text-align: center;
+    @media (min-width: $screen-tablet-min) {
+        @include padd-vert($loyaout-01, 60px);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &__heading {
+        @include h1_mobile;
+        max-width: 420px;
+        @media (min-width: $screen-tablet-min) {
+            @include h1_tablet;
+            max-width: 520px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            @include h1_desktop;
+            max-width: 690px;
+        }
+    }
+
+    &__decoration {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            bottom: 7%;
+            left: -3%;
+            background-color: $addt-bg;
+            width: 106%;
+            height: 64%;
+            z-index: -1;
+        }
+    }
+
+    p {
+        @include font-set-01(14px, 22px, 400);
+        font-family: $sec-font;
+        max-width: 330px;
+        color: $pr-description;
+        margin-bottom: $spacing-02;
+        @media (min-width: $screen-tablet-min) {
+            @include font-set-01(18px, 28px, 400);
+            max-width: 420px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            @include font-set-01(18px, 28px, 400);
+            max-width: 420px;
+            margin-bottom: $loyaout-01;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        @media (min-width: $screen-tablet-min) {
+            margin-bottom: 60px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            margin-bottom: 90px;
+        }
+    }
+
+    &__pr-btn {
+        cursor: pointer;
+        @include pr-btn;
+        @include padd-all(9px, 24px, 9px, 24px);
+        @include font-set-01(16px, 26px, 600);
+        margin-right: $spacing-02;
+        @media (min-width: $screen-tablet-min) {
+            @include padd-all(13px, 45px, 13px, 45px);
+            border-radius: 4px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            @include padd-all(17px, 55px, 17px, 55px);
+            border-radius: 6px;
+            margin-right: $spacing-04;
+        }
+    }
+
+    &__play-btn {
+        cursor: pointer;
+        @include padd-all(11px, 11px, 11px, 11px);
+        border: 1px solid $sec-btn-enabled;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        @media (min-width: $screen-tablet-min) {
+            @include padd-all(15px, 15px, 15px, 15px);
+            border-radius: 6px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            @include padd-all(19px, 19px, 19px, 19px);
+            border-radius: 6px;
+        }
+    }
+
+    &__img-wrap {
+        overflow: hidden;
+        margin-bottom: 40px;
+        @media (min-width: $screen-tablet-min) {
+            margin-bottom: $loyaout-03;
+        }
+        @media (min-width: $screen-desktop-min) {
+            margin-bottom: $loyaout-04;
+        }
+    }
+
+    &__img {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 668px;
+        position: relative;
+        @media (min-width: $screen-tablet-min) {
+            max-width: 952px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            max-width: 952px;
+        }
+       
+        &::before {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            left: -10%;
+            top: 50%;
+            max-width: 430px;
+            width: 100%;
+            height: 80%;
+            transform: translateY(-50%);
+            background-image: url(img/simpler-tool-pattern-left_768.png);
+            
+            @media (min-width: $screen-tablet-min) {
+                width: 430px;
+                height: 230px;
+                background-image: url(img/simpler-tool-pattern-left_768.png)
+            }
+            @media (min-width: $screen-desktop-min) {
+                width: 742px;
+                height: 401px;
+                background-image: url(img/simpler-tool-pattern-left_1200.png)
+            }
+        }
+        
+        &::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            right: -11%;
+            top: 50%;
+            max-width: 450px;
+            width: 100%;
+            height: 80%;
+            transform: translateY(-50%);
+            background-image: url(img/simpler-tool-pattern-right_768.png);
+            
+            @media (min-width: $screen-tablet-min) {
+                width: 450px;
+                height: 240px;
+                background-image: url(img/simpler-tool-pattern-right_768.png)
+            }
+            @media (min-width: $screen-desktop-min) {
+                width: 742px;
+                max-width: none;
+                height: 400px;
+                right: -15%;
+                background-image: url(img/simpler-tool-pattern-right_1200.png)
+            }
+        }
+    }
+
+    &__errect-walls {
+        @include font-set-01(18px, 28px, 600);
+        font-family: $sec-font;
+        margin-bottom: $spacing-01;
+        @media (min-width: $screen-tablet-min) {
+            margin-bottom: 14px;
+        }
+    }
+}
