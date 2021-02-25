@@ -6,7 +6,8 @@
 @import "app/scss/archive.scss";
 
 .header {
-    @include padd-vert(24px, 24px);
+    background-color: $white;
+    height: $spacing-16;
     display: flex;
     justify-content: space-between;
 
@@ -16,7 +17,7 @@
 
         &__logo {
             @media (min-width: $screen-desktop-min) {
-                margin-right: $loyaout-04;
+                margin-right: $spacing-16;
             }
         }
 
@@ -32,7 +33,7 @@
         }
 
         &__item + .navigation__item {
-            margin-left: 36px;
+            margin-left: $spacing-07;
         }
 
         &__link {
@@ -52,7 +53,7 @@
             display: none;
             @media (min-width: $screen-tablet-min) {
                 display: flex;
-                margin-right: 32px;
+                margin-right: $spacing-06;
             }
             @media (min-width: $screen-desktop-min) {
                 margin-right: 0;
@@ -61,7 +62,7 @@
         
         &__item + .btns__item {
             @media (min-width: $screen-tablet-min) {
-                margin-left: 12px;
+                margin-left: $spacing-01;
             }
         }
 
@@ -103,25 +104,58 @@
     @include padd-vert($spacing-04, $spacing-04);
     text-align: center;
     @media (min-width: $screen-tablet-min) {
-        @include padd-vert($loyaout-01, 60px);
+        @include padd-vert($spacing-10, $spacing-13);
     }
 
     &__content {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        & p {
+            @include subheading-mobile;
+            max-width: 330px;
+            color: $pr-description;
+            @media (min-width: $screen-tablet-min) {
+                @include subheading-tablet;
+                max-width: 420px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                @include subheading-desktop;
+                max-width: 470px;
+            }
+        }
     }
     
     &__heading {
         @include h1_mobile;
+        margin-bottom: $spacing-01;
         max-width: 420px;
         @media (min-width: $screen-tablet-min) {
             @include h1_tablet;
+            margin-bottom: $spacing-04;
             max-width: 520px;
         }
         @media (min-width: $screen-desktop-min) {
             @include h1_desktop;
+            margin-bottom: $spacing-04;
             max-width: 690px;
+        }
+    }
+
+    &__subheading {
+        @include subheading-mobile;
+        max-width: 330px;
+        color: $pr-description;
+        margin-bottom: $spacing-02;
+        @media (min-width: $screen-tablet-min) {
+            @include subheading-tablet;
+            max-width: 420px;
+            margin-bottom: $spacing-08;
+        }
+        @media (min-width: $screen-desktop-min) {
+            @include subheading-desktop;
+            max-width: 420px;    
         }
     }
 
@@ -141,30 +175,12 @@
         }
     }
 
-    p {
-        @include font-set-01(14px, 22px, 400);
-        font-family: $sec-font;
-        max-width: 330px;
-        color: $pr-description;
-        margin-bottom: $spacing-02;
-        @media (min-width: $screen-tablet-min) {
-            @include font-set-01(18px, 28px, 400);
-            max-width: 420px;
-            margin-bottom: 40px;
-        }
-        @media (min-width: $screen-desktop-min) {
-            @include font-set-01(18px, 28px, 400);
-            max-width: 420px;
-            margin-bottom: $loyaout-01;
-        }
-    }
-
     &__btns {
         display: flex;
         align-items: center;
-        margin-bottom: 40px;
+        margin-bottom: $spacing-08;
         @media (min-width: $screen-tablet-min) {
-            margin-bottom: 60px;
+            margin-bottom: $spacing-13;
         }
         @media (min-width: $screen-desktop-min) {
             margin-bottom: 90px;
@@ -209,19 +225,19 @@
 
     &__img-wrap {
         overflow: hidden;
-        margin-bottom: 40px;
+        margin-bottom: $spacing-08;
         @media (min-width: $screen-tablet-min) {
-            margin-bottom: $loyaout-03;
+            margin-bottom: $spacing-14;
         }
         @media (min-width: $screen-desktop-min) {
-            margin-bottom: $loyaout-04;
+            margin-bottom: $spacing-16;
         }
     }
 
     &__img {
         display: block;
         margin: 0 auto;
-        width: 90%;
+        width: 80%;
         max-width: 668px;
         position: relative;
         @media (min-width: $screen-tablet-min) {
@@ -289,5 +305,237 @@
         @media (min-width: $screen-tablet-min) {
             margin-bottom: 14px;
         }
+    }
+}
+
+.build-workspace {
+    @include padd-vert($spacing-04, $spacing-06);
+    @media (min-width: $screen-tablet-min) {
+        @include padd-vert($spacing-13, $spacing-13);
+    }
+    @media (min-width: $screen-desktop-min) {
+        overflow: hidden;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: $spacing-05;
+        @media (min-width: $screen-tablet-min) {
+            margin-bottom: $spacing-11;
+        }
+        @media (min-width: $screen-desktop-min) {
+            align-items: flex-start;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: $spacing-05;
+        @media (min-width: $screen-tablet-min) {
+            margin-bottom: $spacing-08;
+        }
+        @media (min-width: $screen-desktop-min) {
+            max-width: 390px;
+            text-align: left;
+            align-items: flex-start;
+            margin-bottom: $spacing-06;
+        }
+    }
+
+    &__heading {
+        @include h2-mobile;
+        margin-bottom: $spacing-01;
+        max-width: 420px;
+        @media (min-width: $screen-tablet-min) {
+            @include h2-tablet;
+            margin-bottom: $spacing-02;
+            max-width: 530px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            @include h2-desktop;
+        }
+    }
+
+    &__decoration {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            bottom: 7%;
+            left: -3%;
+            background-color: $cruise;
+            width: 106%;
+            height: 64%;
+            z-index: -1;
+        }
+    }
+
+    &__subheading {
+        @include subheading-mobile;
+        color: $pr-description;
+        max-width: 330px;
+        @media (min-width: $screen-tablet-min) {
+            @include subheading-tablet;
+            max-width: 420px;
+        }
+    }
+
+    .accordion-menu {
+        max-width: 420px;
+        @media (min-width: $screen-tablet-min) {
+            display: flex;
+            max-width: 690px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            flex-direction: column;
+            max-width: 430px;
+        }
+
+        &__arrow {
+            visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            margin-top: 4px;
+            margin-right: 8px;
+        }
+
+        &__item-wrap {
+            display: flex;
+            padding-right: 20px;
+            @media (min-width: $screen-tablet-min) {
+                max-width: 230px;
+                padding-right: 0px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                max-width: inherit;
+            }
+        }
+
+        &__item-wrap + .accordion-menu__item-wrap {
+            margin-top: $spacing-04;
+            @media (min-width: $screen-tablet-min) {
+                margin-top: 0px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                margin-top: $spacing-02;
+            }
+        }
+
+        &__item {
+            width: 100%;
+            @media (min-width: $screen-tablet-min) {
+                width: 100%;
+            }
+            @media (min-width: $screen-desktop-min) {
+                width: 100%;
+            }
+        }
+
+        &__title {
+            font-family: $sec-font;
+            @include font-set-01(18px, 28px, 600);
+            color: $black;
+            max-width: 420px;
+            margin-bottom: 8px;
+            @media (min-width: $screen-desktop-min) {
+                @include font-set-01(20px, 32px, 600);
+            }
+        }
+        
+        &__text {
+            font-family: $sec-font;
+            @include font-set-01(14px, 22px, 400);
+            color: $pr-description;
+            max-width: 420px;
+            flex-grow: 2;
+            @media (min-width: $screen-desktop-min) {
+                @include font-set-01(16px, 26px, 400);
+            }
+        }
+        
+        &__line {
+            visibility: hidden;
+            display: block;
+            height: 2px;
+            width: 100%;
+            max-width: 330px;
+            background-color: $act-divider;
+            @media (min-width: $screen-desktop-min) {
+                max-width: inherit;
+            }
+        }
+
+        .active {
+            .accordion-menu__arrow {
+                visibility: visible;
+            }
+
+            .accordion-menu__text {
+                margin-bottom: 10px;
+            }
+            
+            .accordion-menu__line {
+                visibility: visible;
+            }
+        }
+    }
+
+    .accordion-img {
+        text-align: center;
+        @media (min-width: $screen-desktop-min) {
+            position: absolute;
+            right: -2%;
+        }
+
+        &__slide-1--active img {
+            max-width: 420px;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            @media (min-width: $screen-tablet-min) {
+                max-width: 690px;
+            }
+        }
+
+        &__slide-2 img {
+            max-width: 420px;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            @include vis-hidden;
+        }
+
+        &__slide-3 img {
+            max-width: 420px;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            @include vis-hidden;
+        }
+    }
+}
+
+.bring-roles {
+    &__title {
+        font-family: $pr-font;
+        color: black;
+        font-size: 40px;
+        line-height: 40px;
     }
 }

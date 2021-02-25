@@ -3,16 +3,18 @@ $spacing-01: 12px;
 $spacing-02: 16px;
 $spacing-03: 20px;
 $spacing-04: 24px;
-
-/***** Loyaout *****/ 
-$loyaout-01: 48px;
-$loyaout-02: 56px;
-$loyaout-03: 64px;
-$loyaout-04: 72px;
-$loyaout-05: 100px;
-$loyaout-06: 120px;
-$loyaout-07: 160px;
-$loyaout-08: 180px;
+$spacing-05: 28px;
+$spacing-06: 32px;
+$spacing-07: 36px;
+$spacing-08: 40px;
+$spacing-09: 44px;
+$spacing-10: 48px;
+$spacing-11: 52px;
+$spacing-12: 56px;
+$spacing-13: 60px;
+$spacing-14: 64px;
+$spacing-15: 68px;
+$spacing-16: 72px;
 
 /***** Breakpoints *****/
 $screen-mobile-min: 320px;
@@ -28,7 +30,7 @@ $screen-tablet-max: $screen-desktop-min - 1;
   margin-right: auto;
   width: 100%;
   
-  @media (min-width: $screen-tablet-min) {
+  @media (min-width: $screen-tablet-min) and (max-width: $screen-tablet-max) {
     padding-left: 30px;
     padding-right: 30px;
     margin-left: auto;
@@ -41,7 +43,7 @@ $screen-tablet-max: $screen-desktop-min - 1;
     padding-right: 30px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1140px;
+    width: 1200px;
   }
 }
 

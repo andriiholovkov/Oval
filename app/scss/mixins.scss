@@ -18,28 +18,77 @@
     padding-left: $pl;
 }
 
+/***** Headings *****/
 @mixin h1_mobile {
     font-family: $pr-font;
     font-size: 38px;
     line-height: 46px;
+    font-weight: 400;
     color: $black;
-    margin-bottom: 12px;
 }
 
 @mixin h1_tablet {
     font-family: $pr-font;
     font-size: 48px;
     line-height: 60px;
+    font-weight: 400;
     color: $black;
-    margin-bottom: 24px;
 }
 
 @mixin h1_desktop {
     font-family: $pr-font;
     font-size: 60px;
     line-height: 74px;
+    font-weight: 400;
     color: $black;
-    margin-bottom: 24px;
+}
+
+@mixin h2_mobile {
+    font-family: $pr-font;
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 400;
+    color: $black;
+}
+
+@mixin h2_tablet {
+    font-family: $pr-font;
+    font-size: 44px;
+    line-height: 55px;
+    font-weight: 400;
+    color: $black;
+}
+
+@mixin h2_desktop {
+    font-family: $pr-font;
+    font-size: 52px;
+    line-height: 64px;
+    font-weight: 400;
+    color: $black;
+}
+
+@mixin subheading-mobile {
+    font-family: $sec-font;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $pr-description;
+}
+
+@mixin subheading_tablet {
+    font-family: $sec-font;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: $pr-description;
+}
+
+@mixin subheading_desktop {
+    font-family: $sec-font;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: $pr-description;
 }
 
 /***** Fonts *****/
@@ -58,10 +107,7 @@
     border-radius: 4px;
 }
 
-
 /*-----------------------------------------------------------------------*/
-
-
 
 /***** Paddings *****/
 @mixin spacing($space: $spacing-rg) {
@@ -78,4 +124,12 @@ $spacing-rg: 10px;
 @mixin spacing($space: $spacing-rg) {
     padding-top: $space;
     padding-bottom: $space;
+}
+
+@mixin vis-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
 }
