@@ -106,6 +106,9 @@
     @media (min-width: $screen-tablet-min) {
         @include padd-vert($spacing-10, $spacing-13);
     }
+    @media (min-width: $screen-desktop-min) {
+        @include padd-vert(90px, 90px);
+    }
 
     &__content {
         display: flex;
@@ -240,11 +243,14 @@
         width: 80%;
         max-width: 668px;
         position: relative;
+        border-radius: 4px;
         @media (min-width: $screen-tablet-min) {
             max-width: 952px;
+            border-radius: 4px;
         }
         @media (min-width: $screen-desktop-min) {
             max-width: 952px;
+            border-radius: 6px;
         }
        
         &::before {
@@ -314,6 +320,7 @@
         @include padd-vert($spacing-13, $spacing-13);
     }
     @media (min-width: $screen-desktop-min) {
+        @include padd-vert(90px, 90px);
         overflow: hidden;
     }
 
@@ -327,7 +334,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: $spacing-05;
+        margin-bottom: $spacing-06;
         @media (min-width: $screen-tablet-min) {
             margin-bottom: $spacing-11;
         }
@@ -336,7 +343,7 @@
         }
     }
 
-    &__text {
+    &__intro {
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -416,6 +423,7 @@
         }
 
         &__item-wrap {
+            cursor: pointer;
             display: flex;
             padding-right: 20px;
             @media (min-width: $screen-tablet-min) {
@@ -424,6 +432,12 @@
             }
             @media (min-width: $screen-desktop-min) {
                 max-width: inherit;
+            }
+
+            &:hover {
+                .accordion-menu__arrow {
+                    visibility: visible;
+                }
             }
         }
 
@@ -447,7 +461,7 @@
             }
         }
 
-        &__title {
+        & h3 {
             font-family: $sec-font;
             @include font-set-01(18px, 28px, 600);
             color: $black;
@@ -457,8 +471,8 @@
                 @include font-set-01(20px, 32px, 600);
             }
         }
-        
-        &__text {
+
+        & p {
             font-family: $sec-font;
             @include font-set-01(14px, 22px, 400);
             color: $pr-description;
@@ -469,7 +483,7 @@
             }
         }
         
-        &__line {
+        & span {
             visibility: hidden;
             display: block;
             height: 2px;
@@ -482,15 +496,17 @@
         }
 
         .active {
+            cursor: default;
+
             .accordion-menu__arrow {
                 visibility: visible;
             }
 
-            .accordion-menu__text {
+            p {
                 margin-bottom: 10px;
             }
             
-            .accordion-menu__line {
+            span {
                 visibility: visible;
             }
         }
@@ -498,44 +514,238 @@
 
     .accordion-img {
         text-align: center;
-        @media (min-width: $screen-desktop-min) {
-            position: absolute;
-            right: -2%;
-        }
 
-        &__slide-1--active img {
-            max-width: 420px;
-            width: 100%;
-            height: 100%;
-            border-radius: 6px;
-            @media (min-width: $screen-tablet-min) {
-                max-width: 690px;
+            img {
+                max-width: 420px;
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+                @media (min-width: $screen-tablet-min) {
+                    max-width: 690px;
+                    border-radius: 6px;
+                }
+                @media (min-width: $screen-desktop-min) {
+                    max-width: 705px;
+                    position: absolute;
+                    bottom: 0px;
+                    right: -2%;
+                }
             }
-        }
-
-        &__slide-2 img {
-            max-width: 420px;
-            width: 100%;
-            height: 100%;
-            border-radius: 6px;
-            @include vis-hidden;
-        }
-
-        &__slide-3 img {
-            max-width: 420px;
-            width: 100%;
-            height: 100%;
-            border-radius: 6px;
-            @include vis-hidden;
-        }
+       
+            .visually-hidden img {
+                @include vis-hidden;
+            }
     }
 }
 
-.bring-roles {
-    &__title {
-        font-family: $pr-font;
-        color: black;
-        font-size: 40px;
-        line-height: 40px;
+.bring-roles-together {
+    @include padd-vert($spacing-06, $spacing-06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: $screen-tablet-min) {
+        @include padd-vert($spacing-13, $spacing-13);
+    }
+    @media (min-width: $screen-desktop-min) {
+        @include padd-vert(90px, 100px);
+    }
+
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: $spacing-06;
+        @media (min-width: $screen-tablet-min) {
+            margin-bottom: $spacing-08;
+        }
+        @media (min-width: $screen-desktop-min) {
+            margin-bottom: $spacing-14;
+        }
+
+        & h2 {
+            @include h2-mobile;
+            margin-bottom: $spacing-01;
+            max-width: 420px;
+            @media (min-width: $screen-tablet-min) {
+                @include h2-tablet;
+                margin-bottom: $spacing-02;
+                max-width: 530px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                @include h2-desktop;
+                max-width: 730px;
+            }
+        }
+
+        & p {
+            @include subheading-mobile;
+            color: $pr-description;
+            max-width: 330px;
+            @media (min-width: $screen-tablet-min) {
+                @include subheading-tablet;
+                max-width: 430px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                @include subheading_desktop;
+                max-width: 480px;
+            }
+        }
+    }
+
+    .accordion-menu {
+        max-width: 420px;
+        margin-bottom: $spacing-06;
+        @media (min-width: $screen-tablet-min) {
+            display: flex;
+            max-width: 690px;
+            margin-bottom: $spacing-10;
+        }
+        @media (min-width: $screen-desktop-min) {
+            max-width: 1140px;
+            width: 100%;
+            margin-bottom: $spacing-14;
+        }
+
+        &__arrow {
+            visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            margin-top: 2px;
+            margin-right: 8px;
+        }
+
+        &__item-wrap {
+            display: flex;
+            flex-direction: column;
+            padding-right: 20px;
+            position: relative;
+            @media (min-width: $screen-tablet-min) {
+                max-width: 230px;
+                padding-right: 0px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                max-width: inherit;
+            }
+
+            &:hover {
+                .accordion-menu__arrow {
+                    visibility: visible;
+                }
+            }
+        }
+
+        &__line {
+            background-color: $sec-divider;
+            max-width: 400px;
+            width: 100%;
+            height: 2px;
+            margin-bottom: 10px;
+            @media (min-width: $screen-tablet-min) {
+                margin-bottom: $spacing-04;
+            }
+        }
+        
+        &__item {
+            display: flex;
+        }
+
+        &__item-wrap {
+            cursor: pointer;
+        }
+
+        &__item-wrap + .accordion-menu__item-wrap {
+            margin-top: 24px;
+            @media (min-width: $screen-tablet-min) {
+                margin-top: 0px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                margin-top: none;
+            }
+        }
+
+        &__text {
+            width: 100%;
+            max-width: 330px;
+            @media (min-width: $screen-tablet-min) {
+                max-width: 100%;
+            }
+
+        }
+
+        & h3 {
+            font-family: $sec-font;
+            @include font-set-01(18px, 28px, 600);
+            color: $black;
+            max-width: 420px;
+            margin-bottom: 8px;
+            @media (min-width: $screen-desktop-min) {
+                @include font-set-01(20px, 32px, 600);
+            }
+        }
+
+        & p {
+            font-family: $sec-font;
+            @include font-set-01(14px, 22px, 400);
+            color: $pr-description;
+            max-width: 420px;
+            flex-grow: 2;
+            @media (min-width: $screen-desktop-min) {
+                @include font-set-01(16px, 26px, 400);
+            }
+        }
+
+        & span {
+            display: none;
+            @media (min-width: $screen-tablet-min) {
+                display: block;
+            }
+        }
+
+        .active {
+            cursor: default;
+
+            .accordion-menu__arrow {
+                visibility: visible;
+            }
+ 
+            span {
+                display: block;
+                height: 2px;
+                width: 100%;
+                max-width: 400px;
+                background-color: $act-divider;
+                margin-bottom: $spacing-01;
+                @media (min-width: $screen-desktop-min) {
+                    margin-bottom: $spacing-04;
+                }
+            }
+        }
+    }
+
+    .accordion-img {
+        text-align: center;
+
+        img {
+            max-width: 420px;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            @media (min-width: $screen-tablet-min) {
+                max-width: 690px;
+                border-radius: 6px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                max-width: 1140px;
+            }
+        }
+       
+        .visually-hidden img {
+            @include vis-hidden;
+        }
+
     }
 }
