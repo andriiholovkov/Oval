@@ -51,6 +51,23 @@ function svg() {
     .pipe(dest("dist/svg"));
 }
 
+function js() {
+  return src("app/js/**/*")
+    .pipe(dest("dist/js"));
+}
+
+function fonts() {
+  return src("app/fonts/**/*")
+    .pipe(dest("dist/fonts"));
+}
+
+/*
+function slick() {
+  return src("app/slick/**")
+    .pipe(dest("dist/slick"));
+}
+*/
+
 function clear() {
   return del('dist')
 }
@@ -61,9 +78,10 @@ function start() {
   })
 
   watch('app/**.html', series(html)).on('change', sync.reload),
-  watch('app/scss/**.scss', series(scss)).on('change', sync.reload)
+  watch('app/scss/**.scss', series(scss)).on('change', sync.reload),
+  watch('app/js/**.js', series(js)).on('change', sync.reload)
 }
 
-exports.build = series(clear, scss, html, images, svg)
-exports.start = series(clear, scss, html, images, svg, start)
+exports.build = series(clear, scss, html, images, svg, fonts, js)
+exports.start = series(clear, scss, html, images, svg, fonts, js, start)
 exports.clear = clear;

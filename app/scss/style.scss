@@ -539,7 +539,7 @@
 }
 
 .bring-roles-together {
-    @include padd-vert($spacing-06, $spacing-06);
+    @include padd-vert($spacing-07, $spacing-07);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -747,5 +747,239 @@
             @include vis-hidden;
         }
 
+    }
+}
+
+.testimonials {
+    @include padd-vert(124px, $spacing-07);
+
+    @media (min-width: $screen-tablet-min) {
+        @include padd-vert(118px, $spacing-13);
+    }
+
+    @media (min-width: $screen-desktop-min) {
+        @include padd-vert(150px, 100px);
+    }
+
+    &__quote  {
+        @include font-set-01(30px, 42px, 400);
+        max-width: 410px;
+        text-align: center;
+        position: relative;
+        font-family: $pr-font;
+        color: $pr-heading;
+        margin: 0 auto;
+        margin-bottom: $spacing-14;
+
+        @media (min-width: $screen-tablet-min) {
+            @include font-set-01(44px, 55px, 400);
+            max-width: 490px;
+        }
+
+        @media (min-width: $screen-desktop-min) {
+            @include font-set-01(52px, 64px, 400);
+            max-width: 650px;
+            text-align: left;
+            margin-left: 0;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -68px;
+            left: 52%;
+            transform: translate(-50%, 0);
+            background-image: url(svg/quote.svg);
+            width: 66px;
+            height: 44px;
+        }
+
+        @media (min-width: $screen-desktop-min) {
+            &::before {
+                left: 8%;  
+                top: -68%;              
+                background-size: cover;
+                width: 96px;
+                height: 64px;
+            }
+        }
+    }
+    
+    &__slider {
+        position: relative;
+
+        .slick-list {
+            overflow: hidden;
+            max-width: 420px;
+            margin: 0 auto;
+    
+            @media (min-width: $screen-tablet-min) {
+                max-width: 560px;
+            }
+            @media (min-width: $screen-desktop-min) {
+                max-width: 1140px;
+            }
+        }
+
+        .slick-slide {
+            max-width: 420px;
+            @media (min-width: $screen-tablet-min) {
+                max-width: 560px;
+            }
+        }
+
+        .slick-track {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 20%;
+            margin: -25px 0px 0px 0px;
+            z-index: 10;
+            font-size: 0;
+            width: 30px;
+            height: 50px;
+
+            &.slick-disabled {
+                opacity: 0.2;
+            }
+
+            &.slick-prev {
+                left: 10%;
+                background: url(../svg/slick-arrow-left.svg) 0 9px no-repeat;
+            }
+
+            &.slick-next {
+                right: 10%;
+                background: url(../svg/slick-arrow-rigth.svg) 0 9px no-repeat;
+            }
+        }
+
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & li {
+                list-style: none;
+                margin: 0px 12px;
+
+                &.slick-active button {
+                    background-color: $black;
+                }
+            }
+
+            & button {
+                font-size: 0px;
+                border-radius: 100%;
+                width: 8px;
+                height: 8px;
+                background-color: $bonjour;
+            }
+        }
+
+        article {
+            @include font-set-01(16px, 26px, 400);
+            font-family: $sec-font;
+            color: $ship-gray;
+            margin-bottom: 16px;
+
+            @media (min-width: $screen-tablet-min) {
+                text-align: center;
+            }
+
+            @media (min-width: $screen-desktop-min) {
+                text-align: left;
+                @include font-set-01(20px, 30px, 400);
+                margin-bottom: $spacing-04;
+            }
+        }
+    }
+
+    &__slider-wrapper {
+        display: flex;
+    }
+
+    &__review {
+        margin-bottom: $spacing-04;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @media (min-width: $screen-tablet-min) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-left: none;
+        }
+
+        @media (min-width: $screen-desktop-min) {
+            align-items: flex-start;
+            border-left: 1px solid $sec-divider;
+            margin-right: 20px;
+        }
+
+        &:first-child {
+            border-left: none;
+
+            @media (min-width: $screen-desktop-min) {
+                max-width: 346px;
+                border-left: none;
+                padding-left: 0px;
+                max-width: 346px;
+            }
+        }
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+
+        &__img-wrapper {
+            margin-right: $spacing-01;
+            @media (min-width: $screen-tablet-min) {
+                display: none;
+                margin-right: none;
+            }
+
+            @media (min-width: $screen-desktop-min) {
+                display: block;
+            }
+        }
+
+        &__text-wrapper {
+            display: flex;
+            flex-direction: column;
+            @media (min-width: $screen-tablet-min) {
+                text-align: center;
+            }
+
+            @media (min-width: $screen-desktop-min) {
+                text-align: left;
+            }
+
+            strong {
+                @include font-set-01(14px, 22px, 600);
+                font-family: $pr-font;
+                color: $ship-gray;
+                margin-bottom: 2px;
+
+                @media (min-width: $screen-tablet-min) {
+                    @include font-set-01(16px, 24px, 600);
+                }
+
+            }
+
+            span {
+                @include font-set-01(14px, 22px, 400);
+                font-family: $sec-font;
+                color: $mountain-mist;
+
+                @media (min-width: $screen-desktop-min) {
+                    @include font-set-01(14px, 22px, 400);
+                }
+            }
+        }
     }
 }

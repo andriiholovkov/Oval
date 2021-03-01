@@ -3,7 +3,8 @@
 $persimmon: #FF6846;
 $spun-pearl: #B3B1B7;
 $mid-gray: #64626A;
-$mountain-mist: #C9C8CC;
+$french-gray: #C9C8CC;
+$mountain-mist: #8E8C95;
 $ship-gray: #3B3A40;
 $sauvignon: #FFF6F4;
 $navajo-white: #FFDEA7;
@@ -23,33 +24,28 @@ $white: #ffffff;
 /********** Component names (use as) **********/
 
 /***** Text ******/
-$pr-heading: $spun-pearl;
+$pr-heading: $black;
 $pr-description: $mid-gray;
-$pr-caption: $mountain-mist;
+$pr-caption: $french-gray;
 
 /***** Background *****/
 $pr-bg: $black;
 $sec-bg: $athens-gray;
 $addt-bg: $navajo-white;
 
-/***** Icon *****/
-$sec-ic: $spun-pearl;
-
 /***** Button *****/
 $pr-btn-enabled: $persimmon;
-$sec-btn-enabled: $mountain-mist;
+$sec-btn-enabled: $french-gray;
 
 /***** Link *****/
 $nav-link-enabled: $ship-gray;
 
 /***** Input *****/
 $inpt-pl-enabled: $spun-pearl;
-$inpt-br-enabled: $mountain-mist;
+$inpt-br-enabled: $french-gray;
 
 /***** Divider *****/
 $act-divider: $blaze-orange;
 $pr-divider: $mercury;
 $sec-divider: $mischka;
 
-/***** Slider *****/
-$dots-bg: $bonjour;
