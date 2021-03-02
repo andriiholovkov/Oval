@@ -142,7 +142,7 @@
         @media (min-width: $screen-desktop-min) {
             @include h1_desktop;
             margin-bottom: $spacing-04;
-            max-width: 690px;
+            max-width: 750px;
         }
     }
 
@@ -264,7 +264,7 @@
             height: 80%;
             transform: translateY(-50%);
             background-image: url(img/simpler-tool-pattern-left_768.png);
-            
+
             @media (min-width: $screen-tablet-min) {
                 width: 430px;
                 height: 230px;
@@ -353,7 +353,7 @@
             margin-bottom: $spacing-08;
         }
         @media (min-width: $screen-desktop-min) {
-            max-width: 390px;
+            max-width: 420px;
             text-align: left;
             align-items: flex-start;
             margin-bottom: $spacing-06;
@@ -754,7 +754,7 @@
     @include padd-vert(124px, $spacing-07);
 
     @media (min-width: $screen-tablet-min) {
-        @include padd-vert(118px, $spacing-13);
+        @include padd-vert(150px, $spacing-13);
     }
 
     @media (min-width: $screen-desktop-min) {
@@ -778,7 +778,7 @@
 
         @media (min-width: $screen-desktop-min) {
             @include font-set-01(52px, 64px, 400);
-            max-width: 650px;
+            max-width: 690px;
             text-align: left;
             margin-left: 0;
         }
@@ -812,7 +812,6 @@
             overflow: hidden;
             max-width: 420px;
             margin: 0 auto;
-    
             @media (min-width: $screen-tablet-min) {
                 max-width: 560px;
             }
@@ -885,11 +884,9 @@
             font-family: $sec-font;
             color: $ship-gray;
             margin-bottom: 16px;
-
             @media (min-width: $screen-tablet-min) {
                 text-align: center;
             }
-
             @media (min-width: $screen-desktop-min) {
                 text-align: left;
                 @include font-set-01(20px, 30px, 400);
@@ -942,7 +939,6 @@
                 display: none;
                 margin-right: none;
             }
-
             @media (min-width: $screen-desktop-min) {
                 display: block;
             }
@@ -954,7 +950,6 @@
             @media (min-width: $screen-tablet-min) {
                 text-align: center;
             }
-
             @media (min-width: $screen-desktop-min) {
                 text-align: left;
             }
@@ -964,22 +959,162 @@
                 font-family: $pr-font;
                 color: $ship-gray;
                 margin-bottom: 2px;
-
                 @media (min-width: $screen-tablet-min) {
                     @include font-set-01(16px, 24px, 600);
                 }
-
             }
 
             span {
                 @include font-set-01(14px, 22px, 400);
                 font-family: $sec-font;
                 color: $mountain-mist;
-
                 @media (min-width: $screen-desktop-min) {
                     @include font-set-01(14px, 22px, 400);
                 }
             }
         }
+    }
+}
+
+.achievements {
+	@include padd-vert(36px, 36px);
+    text-align: center;
+	position: relative;
+    @media (min-width: $screen-tablet-min) {
+		@include padd-vert($spacing-13, $spacing-13);
+	}
+	@media (min-width: $screen-desktop-min) {
+		@include padd-vert(100px, 100px);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 90%;
+		right: 85%;
+		width: 470px;
+		height: 257px;
+		background-image: url(img/business-workflow-768.png);
+		background-repeat: no-repeat;
+	}
+
+    p {
+        @include font-set-01(18px, 28px, 400);
+			max-width: 420px;
+			font-family: $sec-font;
+			color: $mountain-mist;
+			margin: 0 auto;
+        	margin-bottom: $spacing-04;
+		@media (min-width: $screen-tablet-min) {
+			@include font-set-01(20px, 30px, 400);
+		}
+		@media (min-width: $screen-desktop-min) {
+			text-align: left;
+			max-width: 260px;
+			margin-right: 200px;
+			margin-bottom: -45px;
+		}
+    }
+
+	&__row-items-1 {
+		margin-bottom: 20px;
+
+		@media (min-width: $screen-tablet-min) {
+			display: flex;
+			justify-content: center;
+
+			.achievements__item + .achievements__item {
+				margin-left: 70px;
+				margin-top: 40px;
+			}
+		}
+
+		@media (min-width: $screen-desktop-min) {
+			display: flex;
+			justify-content: center;
+			margin-bottom: -84px;
+
+			.achievements__item + .achievements__item {
+				margin-left: 205px;
+				margin-top: 170px;
+			}
+		}
+	}
+
+	&__row-items-2 {
+		@media (min-width: $screen-tablet-min) {
+			display: flex;
+			justify-content: center;
+			margin-right: 120px;
+
+			.achievements__item + .achievements__item {
+				margin-left: 110px;
+				margin-top: 40px;
+			}
+		}
+		@media (min-width: $screen-desktop-min) {
+			justify-content: flex-start;
+			margin-right: auto;
+			margin-left: 80px;
+
+			.achievements__item + .achievements__item {
+				margin-left: 320px;
+				margin-top: 170px;
+			}
+		}
+	}
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+		
+		&:first-child {
+			margin-bottom: 20px;
+		}
+    }
+
+    &__heading {
+        @include font-set-01(64px, 79px, 400)
+		max-width: 280px;
+		margin: 0 auto;
+        font-family: $pr-font;
+        font-style: italic;
+        color: $pr-heading;
+        margin-bottom: $spacing-02;
+		@media (min-width: $screen-tablet-min) {
+			@include font-set-01(72px, 89px, 400)
+		}
+		@media (min-width: $screen-desktop-min) {
+			max-width: 380px;
+			@include font-set-01(100px, 124px, 400)
+		}
+        
+		span {
+			position: relative;
+		}
+
+        & span:after {
+			content: "";
+			position: absolute;
+			display: inline-block;
+			bottom: 18%;
+			left: -2%;
+			background-color: #ffdea7;
+			width: 100%;
+			height: 8%;
+			z-index: -1;
+        }
+    }
+
+    &__caption {
+        @include font-set-01(16px, 26px, 400)
+        font-family: $sec-font;
+        color: $mountain-mist;
+		@media (min-width: $screen-tablet-min) {
+			@include font-set-01(18px, 28px, 400)
+		}
+		@media (min-width: $screen-tablet-min) {
+			@include font-set-01(20px, 30px, 400)
+		}
     }
 }
