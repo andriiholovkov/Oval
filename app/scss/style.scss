@@ -1164,3 +1164,173 @@
         }
     }
 }
+
+.footer {
+    @include padd-vert($spacing-06, $spacing-06);
+    background-color: $black;
+    @media (min-width: $screen-desktop-min) {
+        @include padd-vert(100px, 100px);
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        @media (min-width: $screen-desktop-min) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+        @media (min-width: $screen-desktop-min) {
+            order: 1;
+            margin-top: 8px;
+        }
+
+        span {
+            @include font-set-01(12px, 18px, 400);
+            font-family: $sec-font;
+            color: $mid-gray;
+            @media (min-width: $screen-tablet-min) {
+                @include font-set-01(14px, 22px, 400);
+            }
+        }
+    }
+
+    &__logo-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #232323;
+        padding-bottom: $spacing-05;
+        padding-right: $spacing-01;
+        margin-bottom: $spacing-03;
+        @media (min-width: $screen-desktop-min) {
+            align-items: flex-start;
+            flex-direction: column;
+            border-bottom: none;
+            padding-bottom: 0px;
+            margin-bottom: 102px;
+        }
+    }
+
+    &__logo {
+        cursor: pointer;
+        width: 49px;
+        height: 14px;
+        @media (min-width: $screen-tablet-min) {
+            width: 81px;
+            height: 24px;
+        }
+        @media (min-width: $screen-desktop-min) {
+            margin-bottom: $spacing-06;
+        }
+    }
+
+    &__social-links {
+        display: flex;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 6px;
+            border: 1px solid #383738;
+            border-radius: 100%;
+            margin-right: 12px;
+            @media (min-width: $screen-tablet-min) {
+                padding: 8px;
+            }
+
+            img {
+                @media (min-width: $screen-tablet-min) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }     
+
+    &__right {
+        order: 1;
+        margin-bottom: $spacing-04;
+        @media (min-width: $screen-desktop-min) {
+            order: 2;
+            margin-bottom: 0px;
+        }
+
+        .navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-right: 49px;
+            @media (min-width: $screen-desktop-min) {
+                order: 2;
+            }
+            @media (min-width: $screen-desktop-min) {
+                padding-right: 70px;
+            }
+
+            &__col {
+                &:first-child {
+                    margin-bottom: 20px;
+                    @media (min-width: $screen-desktop-min) {
+                        margin-bottom: 0px;
+                    }
+                }
+
+                &:nth-child(even) {
+                    margin-right: 0px;
+                    @media (min-width: $screen-desktop-min) {
+                        margin-right: 92px;
+                    }
+                }
+
+                h4 {
+                    @include font-set-01(12px, 18px, 600);
+                    font-family: $sec-font;
+                    color: $white;
+                    margin-bottom: $spacing-01;
+                    @media (min-width: $screen-tablet-min) {
+                        @include font-set-01(14px, 24px, 600);
+                        margin-bottom: $spacing-03;
+                    }
+                    @media (min-width: $screen-tablet-min) {
+                        @include font-set-01(16px, 26px, 600);
+                    }
+                }
+
+                @media (min-width: $screen-desktop-min) {
+                    margin-right: 92px;
+
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+                }
+            }
+
+            &__item {
+                margin-bottom: 6px;
+                @media (min-width: $screen-tablet-min) {
+                    margin-bottom: 12px;
+                }
+
+                a {
+                    @include font-set-01(12px, 18px, 400);
+                    font-family: $sec-font;
+                    color: $mountain-mist;
+                    @media (min-width: $screen-tablet-min) {
+                        @include font-set-01(14px, 24px, 400);
+                    }
+                    @media (min-width: $screen-tablet-min) {
+                        @include font-set-01(16px, 26px, 400);
+                    }
+                }
+            }
+        }
+    }
+}
