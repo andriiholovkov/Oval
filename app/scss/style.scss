@@ -4,6 +4,7 @@
 @import "app/scss/loyaout.scss";
 @import "app/scss/mixins.scss";
 @import "app/scss/archive.scss";
+@import "app/scss/pricing.scss";
 
 .header {
     background-color: $white;
@@ -40,7 +41,7 @@
             @media (min-width: $screen-desktop-min) {
                 @include font-set-01(14px, 18px, 400);
                 font-family: $sec-font;
-                color: $nav-link-enabled;
+                color: $link-enabled;
             }
         }
     }
@@ -70,7 +71,7 @@
             font-family: $sec-font;
             @include font-set-01(14px, 18px, 400);
             @include padd-all(10px, 14px, 10px, 14px);
-            color: $nav-link-enabled;
+            color: $link-enabled;
             border-radius: 4px;
         }
 
@@ -131,16 +132,16 @@
     }
     
     &__heading {
-        @include h1_mobile;
+        @include h1-mobile;
         margin-bottom: $spacing-01;
         max-width: 420px;
         @media (min-width: $screen-tablet-min) {
-            @include h1_tablet;
+            @include h1-tablet;
             margin-bottom: $spacing-04;
             max-width: 520px;
         }
         @media (min-width: $screen-desktop-min) {
-            @include h1_desktop;
+            @include h1-desktop;
             margin-bottom: $spacing-04;
             max-width: 750px;
         }
@@ -587,7 +588,7 @@
                 max-width: 430px;
             }
             @media (min-width: $screen-desktop-min) {
-                @include subheading_desktop;
+                @include subheading-desktop;
                 max-width: 480px;
             }
         }
@@ -990,12 +991,17 @@
 	&::after {
 		content: '';
 		position: absolute;
-		top: 90%;
+		top: 70%;
 		right: 85%;
 		width: 470px;
 		height: 257px;
+		z-index: -1;
 		background-image: url(img/business-workflow-768.png);
 		background-repeat: no-repeat;
+		@media (min-width: $screen-tablet-min) {
+			top: 90%;
+			right: 93%;
+		}
 	}
 
     p {
@@ -1074,7 +1080,7 @@
     }
 
     &__heading {
-        @include font-set-01(64px, 79px, 400)
+        @include font-set-01(64px, 79px, 400);
 		max-width: 280px;
 		margin: 0 auto;
         font-family: $pr-font;
@@ -1107,7 +1113,7 @@
     }
 
     &__caption {
-        @include font-set-01(16px, 26px, 400)
+        @include font-set-01(16px, 26px, 400);
         font-family: $sec-font;
         color: $mountain-mist;
 		@media (min-width: $screen-tablet-min) {
@@ -1116,5 +1122,45 @@
 		@media (min-width: $screen-tablet-min) {
 			@include font-set-01(20px, 30px, 400)
 		}
+    }
+}
+
+.pricing {
+    &-plans {
+        @include padd-vert(36px, 56px);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        @media (min-width: $screen-tablet-min) {
+            @include padd-vert(60px, 80px);
+        }
+        @media (min-width: $screen-desktop-min) {
+            @include padd-vert(100px, 160px);
+        }
+    
+        &__heading {
+            @include h1-mobile;
+            margin-bottom: $spacing-01;
+            @media (min-width: $screen-tablet-min) {
+                @include h1-tablet;
+                margin-bottom: $spacing-03;
+            }
+            @media (min-width: $screen-desktop-min) {
+                @include h1-desktop;
+            }
+        }
+    
+        &__subheading {
+            @include subheading-mobile;
+            margin-bottom: $spacing-04;
+            @media (min-width: $screen-tablet-min) {
+                @include subheading-tablet;
+                margin-bottom: $spacing-10;
+            }
+            @media (min-width: $screen-desktop-min) {
+                @include subheading-desktop;
+                margin-bottom: $spacing-08;
+            }
+        }
     }
 }

@@ -19,7 +19,7 @@
 }
 
 /***** Headings *****/
-@mixin h1_mobile {
+@mixin h1-mobile {
     font-family: $pr-font;
     font-size: 38px;
     line-height: 46px;
@@ -27,7 +27,7 @@
     color: $pr-heading;
 }
 
-@mixin h1_tablet {
+@mixin h1-tablet {
     font-family: $pr-font;
     font-size: 48px;
     line-height: 60px;
@@ -35,7 +35,7 @@
     color: $pr-heading;
 }
 
-@mixin h1_desktop {
+@mixin h1-desktop {
     font-family: $pr-font;
     font-size: 60px;
     line-height: 74px;
@@ -43,7 +43,7 @@
     color: $pr-heading;
 }
 
-@mixin h2_mobile {
+@mixin h2-mobile {
     font-family: $pr-font;
     font-size: 28px;
     line-height: 40px;
@@ -51,7 +51,7 @@
     color: $pr-heading;
 }
 
-@mixin h2_tablet {
+@mixin h2-tablet {
     font-family: $pr-font;
     font-size: 44px;
     line-height: 55px;
@@ -59,7 +59,7 @@
     color: $pr-heading;
 }
 
-@mixin h2_desktop {
+@mixin h2-desktop {
     font-family: $pr-font;
     font-size: 52px;
     line-height: 64px;
@@ -75,7 +75,7 @@
     color: $pr-description;
 }
 
-@mixin subheading_tablet {
+@mixin subheading-tablet {
     font-family: $sec-font;
     font-size: 18px;
     line-height: 28px;
@@ -102,6 +102,7 @@
 @mixin pr-btn {
     font-size: 14px;
     line-height: 18px;
+    font-weight: 600;
     color: $white;
     background-color: $pr-btn-enabled;
     border-radius: 4px;

@@ -1,0 +1,314 @@
+@import "app/scss/loyaout.scss";
+@import "app/scss/colors.scss";
+@import "app/scss/fonts.scss";
+@import "app/scss/mixins.scss";
+
+
+.pricing {
+  &__switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: $spacing-02;
+    margin-bottom: $spacing-06;
+    @media (min-width: $screen-tablet-min) {
+        margin-bottom: $spacing-13;
+    }
+  
+    span {
+        @include font-set-01(14px, 22px, 500);
+        font-family: $sec-font;
+        color: $black;
+        &:first-child {
+          position: relative;
+          &:before {
+              content: 'Save 13%';
+              position: absolute;
+              top: -90%;
+              left: 50%;
+              width: 60px;
+              transform: translate(-50%, 0);
+              @include font-set-01(12px, 18px, 600);
+              font-family: "Libre Baskerville",Georgia,serif;
+              color: $persimmon;
+              @media (min-width: $screen-tablet-min) {
+                  @include font-set-01(14px, 22px, 600);
+                  width: 70px;
+              }
+          }
+        }
+        @media (min-width: $screen-tablet-min) {
+            @include font-set-01(18px, 30px, 500);
+        }
+    }
+  
+    .toggle {
+        display: inline-block;
+        position: relative;
+        width: 56px;
+        height: 28px;
+        margin: 0 16px;
+        @media (min-width: $screen-tablet-min) {
+            width: 88px;
+            height: 48px;
+        }
+  
+        input {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            &:checked + span {
+                background-color: $persimmon;
+            }
+  
+            &:checked + span:before {
+                transform: translateX(28px);
+                @media (min-width: $screen-tablet-min) {
+                    transform: translateX(40px);
+                }
+            }
+  
+            &:focus + span {
+                box-shadow: 0 0 1px $mischka;
+            }
+        }
+  
+        span {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: $mischka;
+            transition: .4s;
+            border-radius: 34px;
+            transition: .4s;
+  
+            &:before {
+                content: '';
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                width: 20px;
+                height: 20px;
+                background-color: $white;
+                border-radius: 50%;
+                transition: .4s;
+                @media (min-width: $screen-tablet-min) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+  }
+  
+  &__plans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid $mischka;
+    max-width: 420px;
+    margin: 0 auto;
+    margin-bottom: $spacing-06;
+    @media (min-width: $screen-tablet-min) {
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-radius: 6px;
+        max-width: 690px;
+        margin-bottom: $spacing-10;
+    }
+    @media (min-width: $screen-desktop-min) {
+        flex-direction: row;
+        max-width: 11400px;
+    }
+
+    .plan-card {
+      @include padd-vert(32px, 32px);
+      @include padd-hor(63px, 63px);
+      border-bottom: 1px solid $mischka;
+      align-self: stretch;
+      @media (min-width: $screen-tablet-min) {
+          @include padd-vert(36px, 36px);
+          @include padd-hor(95px, 95px);
+          flex-grow: 1;
+          max-width: 344px;
+          min-height: 380px;
+          &:nth-child(odd) {
+              border-right: 1px solid $mischka;
+          }
+          &:nth-child(3) {
+              border-bottom: 0px;
+          }
+      }
+      @media (min-width: $screen-desktop-min) {
+          @include padd-vert(48px, 48px);
+          @include padd-hor(65px, 65px);
+          flex-grow: 0;
+          border-bottom: 0px;
+          max-width: 284px;
+          &:nth-child(2) {
+              border-right: 1px solid $mischka;
+          }
+      }
+    
+      &:last-child {
+          border-bottom: 0px;
+      }
+    
+      h3 {
+          @include font-set-01(20px, 30px, 600);
+          font-family: $sec-font;
+          color: $ship-gray;
+          @media (min-width: $screen-tablet-min) {
+              @include font-set-01(24px, 32px, 600);
+              margin-bottom: 4px;
+          }
+      }
+    
+      &__subheading {
+          @include font-set-01(14px, 22px, 400);
+          font-family: $sec-font;
+          color: $pr-description;
+          margin-bottom: $spacing-06;
+          @media (min-width: $screen-desktop-min) {
+              margin-bottom: $spacing-07;
+          }
+      }
+    
+      span {
+          @include font-set-01(36px, 45px, 600);
+          display: inline-block;
+          font-family: $pr-font;
+          color: $ship-gray;
+          margin-bottom: 8px;
+      }
+    
+      &__description {
+          @include font-set-01(14px, 22px, 400);
+          font-family: $sec-font;
+          color: $pr-description;
+          margin-bottom: $spacing-04;
+          @media (min-width: $screen-tablet-min) {
+              max-width: 170px;
+              margin-left: auto;
+              margin-right: auto;
+          }
+      }
+    
+      a {
+          @include font-set-01(14px, 22px, 400);
+          display: block;
+          font-family: $sec-font;
+          color: $link-enabled;
+          text-decoration: underline;
+          margin-bottom: $spacing-08;
+      }
+    
+      button {
+          @include pr-btn;
+          width: 112px;
+          height: 48px;
+      }
+    }
+  }
+  
+  &__enterprise {
+    @include padd-vert(24px, 32px);
+    @include padd-hor(59px, 59px);
+    max-width: 420px;
+    border-radius: 4px;
+    background-color: $sec-bg;
+    margin: 0 auto;
+    margin-bottom: $spacing-06;
+    @media (min-width: $screen-tablet-min) {
+        display: flex;
+        padding: 30px;
+        align-items: center;
+        max-width: 690px;
+        border-radius: 6px;
+        justify-content: space-between;
+        text-align: left;
+    }
+    @media (min-width: $screen-desktop-min) {
+        @include padd-vert(38px, 38px);
+        @include padd-hor(195px, 195px);
+        max-width: 1140px;
+        margin-bottom: $spacing-09;
+    }
+  
+    h3 {
+        @include font-set-01(20px, 30px, 600);
+        font-family: $sec-font;
+        color: $ship-gray;
+        margin-bottom: $spacing-01;
+        @media (min-width: $screen-tablet-min) {
+            @include font-set-01(24px, 32px, 600);
+            margin-bottom: 0;
+            margin-right: $spacing-02;
+        }
+    }
+  
+    p {
+        @include font-set-01(14px, 22px, 400);
+        font-family: $sec-font;
+        color: $pr-description;
+        max-width: 162px;
+        margin: 0 auto 16px;
+        @media (min-width: $screen-tablet-min) {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: auto;
+            max-width: 350px;
+        }
+        @media (min-width: $screen-tablet-min) {
+            max-width: 474px;
+        }
+    }
+  
+    button {
+        @include pr-btn;
+            width: 124px;
+            height: 36px;
+    }
+  }
+  
+  &__notes {
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto;
+    @media (min-width: $screen-tablet-min) {
+        max-width: 380px;
+    }
+    @media (min-width: $screen-desktop-min) {
+        max-width: 752px;
+    }
+  
+    p {
+        @include font-set-01(14px, 22px, 400);
+        font-family: $sec-font;
+        color: $pr-description;
+        margin-bottom: $spacing-03;
+        @media (min-width: $screen-tablet-min) {
+            @include font-set-01(16px, 26px, 400);
+            margin-bottom: $spacing-04;
+        }
+        @media (min-width: $screen-desktop-min) {
+            margin-bottom: $spacing-02;
+        }
+    }
+  
+    a {
+        @include font-set-01(14px, 22px, 600);
+            font-family: $sec-font;
+            color: $link-enabled;
+            text-decoration: underline;
+            margin-bottom: $spacing-08;
+    }
+  }
+}
+
+
