@@ -1,3 +1,445 @@
-.header-gray {
-  background-color: gray;
+@import "app/scss/reset.scss";
+@import "app/scss/fonts.scss";
+@import "app/scss/colors.scss";
+@import "app/scss/loyaout.scss";
+@import "app/scss/mixins.scss";
+@import "app/scss/archive.scss";
+@import "app/scss/pricing.scss";
+
+.talk {
+  @include padd-vert($spacing-06, $spacing-04);
+  @media (min-width: $screen-tablet-min) {
+    display: flex;
+    justify-content: space-between;
+    @include padd-vert($spacing-12, $spacing-11);
+  }
+  @media (min-width: $screen-desktop-min) {
+    @include padd-vert(105px, 76px);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $alabaster;
+    width: 100%;
+    height: 700px;
+    z-index: -1;
+    @media (min-width: $screen-tablet-min) {
+      height: 435px;
+    }
+    @media (min-width: $screen-desktop-min) {
+      height: 590px;
+    }
+  }
+
+  &__intro {
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto;
+    margin-bottom: $spacing-08;
+
+    @media (min-width: $screen-tablet-min) {
+      margin: 0;
+      text-align: left;
+      margin-right: 65px;
+    }
+    @media (min-width: $screen-desktop-min) {
+      max-width: 480px;
+      margin-right: 105px;
+    }
+
+    h1 {
+      @include h1-mobile;
+      margin-bottom: $spacing-01;
+      @media (min-width: $screen-tablet-min) {
+        @include h1-tablet;
+      }
+      @media (min-width: $screen-desktop-min) {
+        @include h1-desktop;
+        margin-bottom: $spacing-03;
+      }
+    }
+
+    p {
+      @include subheading-mobile;
+      margin: 0 auto;
+      margin-bottom: $spacing-04;
+      @media (min-width: $screen-tablet-min) {
+        margin-bottom: $spacing-06;
+      }
+      @media (min-width: $screen-desktop-min) {
+        @include subheading-desktop;
+        margin-bottom: $spacing-10;
+      }
+    }
+  }
+
+  &__intro-top {
+    @media (min-width: $screen-tablet-min) {
+      margin-bottom: 72px;
+    }
+    @media (min-width: $screen-desktop-min) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__intro-bttm {
+    img {
+      display: none;
+      @media (min-width: $screen-tablet-min) {
+        display: block;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      @media (min-width: $screen-desktop-min) {
+        display: block;
+        width: 100%;
+        max-width: 420px;
+        margin-left: -12px;
+      }
+    }
+  }
+
+  &__supheading {
+    @include font-set-01(12px, 18px, 600);
+    display: inline-block;
+    font-family: $sec-font;
+    letter-spacing: 1px;
+    color: $french-gray;
+    text-transform: uppercase;
+    margin-bottom: $spacing-03;
+    @media (min-width: $screen-tablet-min) {
+      margin-bottom: 18px;
+    }
+    @media (min-width: $screen-desktop-min) {
+      @include font-set-01(18px, 28px, 600);
+      margin-bottom: $spacing-07;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    @media (min-width: $screen-tablet-min) {
+      justify-content: flex-start;
+    }
+    
+    .call-us {
+      width: 130px;
+      height: 58px;
+      background-color: $persimmon;
+
+      span {
+        font-family: $sec-font;
+        @include font-set-01(12px, 18px, 600);
+        color: $white;
+        @media (min-width: $screen-desktop-min) {
+          @include font-set-01(16px, 19px, 400);
+        }
+
+        &:first-child {
+          @include font-set-01(12px, 18px, 400);
+          @media (min-width: $screen-desktop-min) {
+            @include font-set-01(14px, 22px, 600);
+          }
+        }      
+      }
+    }
+
+    .email-us {
+      width: 130px;
+      height: 58px;
+      background-color: $white;
+      border: 1px solid $persimmon;
+      
+      span {
+        font-family: $sec-font;
+        @include font-set-01(14px, 20px, 600);
+        color: $persimmon;
+        @media (min-width: $screen-desktop-min) {
+          @include font-set-01(16px, 19px, 400);
+        }
+
+        &:first-child {
+          @include font-set-01(12px, 18px, 400);
+          @media (min-width: $screen-desktop-min) {
+            @include font-set-01(14px, 22px, 600);
+          }
+        }
+      }
+    }
+
+    .link {     
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 4px;
+      text-align: left;
+      @media (min-width: $screen-tablet-min) {
+        border-radius: 6px;
+        padding-top: 14px;
+        padding-right: 17px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+      }
+      @media (min-width: $screen-desktop-min) {
+        width: 180px;
+        border-radius: 8px;
+        padding-top: 15px;
+        padding-right: 20px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+      }
+
+      & + .link {
+        margin-left: $spacing-01;
+        @media (min-width: $screen-tablet-min) {
+          margin-left: $spacing-02;
+        }
+        @media (min-width: $screen-desktop-min) {
+          margin-left: $spacing-05;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    padding: 16px;
+    border-radius: 4px;
+    background-color: $white;
+    box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.04);
+    max-width: 420px;
+    margin: 0 auto;
+    margin-bottom: $spacing-05;
+    @media (min-width: $screen-tablet-min) {
+      padding: 24px;
+      max-width: 347px;
+      margin: 0;
+    }
+    @media (min-width: $screen-desktop-min) {
+      max-width: 487px;
+    }
+
+    h2 {
+      @include font-set-01(18px, 28px, 600);
+      font-family: $sec-font;
+      color: $black;
+      margin-bottom: $spacing-01;
+      @media (min-width: $screen-tablet-min) {
+        @include font-set-01(22px, 32px, 600);
+        margin-bottom: $spacing-02;
+      }
+      @media (min-width: $screen-desktop-min) {
+        @include font-set-01(28px, 42px, 600);
+        margin-bottom: 18px;
+      }
+    }
+
+    p {
+      @include font-set-01(12px, 20px, 400);
+      font-family: $sec-font;
+      color: $pr-description;
+      margin-bottom: $spacing-02;
+      @media (min-width: $screen-tablet-min) {
+        @include font-set-01(14px, 22px, 400);
+        margin-bottom: $spacing-02;
+      }
+      @media (min-width: $screen-desktop-min) {
+        @include font-set-01(18px, 30px, 400);
+        margin-bottom: $spacing-08;
+      }
+    }
+
+    form {
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $spacing-02;
+
+        &:last-of-type {
+          margin-left: 0px;
+        }
+
+        @media (min-width: $screen-tablet-min) {
+          &:last-child {
+            margin-left: $spacing-01;
+          }
+
+          &:nth-child(3) {
+            margin-bottom: 32px;
+          }
+        }
+
+        input {
+          border-radius: 4px;
+          box-sizing: border-box;
+          border: 1px solid $mischka;
+          padding: 12px;
+          font-size: 12px;
+          font-family: $sec-font;
+          @media (min-width: $screen-tablet-min) {
+            max-width: 144px;
+            font-size: 14px;
+            border-radius: 6px;
+          }
+          @media (min-width: $screen-desktop-min) {
+            max-width: 214px;
+            font-size: 16px;
+            border-radius: 8px;
+            padding: 14px;
+            min-height: 52px;
+          }
+
+          &:focus {
+            outline: none;
+            border: 1px solid $persimmon;
+          }
+    
+          &::placeholder {
+            color: $spun-pearl;
+          }
+        }
+
+        label {
+          @include font-set-01(12px, 18px,500);
+            font-family: $sec-font;
+            margin-bottom: 5px;
+            @media (min-width: $screen-tablet-min) {
+              @include font-set-01(14px, 22px, 500);
+            }
+    
+          span {
+            color: $persimmon;
+          }
+        }
+
+        .topics-wrapper {
+          position: relative;
+
+          select {
+            width: 100%;
+            min-height: 40px;
+            padding: 12px 32px 12px 12px;
+            border: 1px solid $mischka;
+            border-radius: 4px;
+            appearance: none;
+            width: 100%;
+            font-family: $sec-font;
+            font-size: 12px;
+            color: $black;
+            @media (min-width: $screen-tablet-min) {
+              font-size: 14px;
+              border-radius: 6px;
+              padding: 12px 36px 12px 12px;
+            }
+            @media (min-width: $screen-desktop-min) {
+              font-size: 16px;
+              border-radius: 8px;
+              min-height: 52px;
+              padding: 14px 44px 14px 14px;
+            }
+
+            &:focus {
+              outline: none;
+              border: 1px solid $persimmon;
+            }
+
+            option {
+              @include font-set-01(12px, 18px, 400);
+              font-family: $sec-font;
+              color: $black;
+            }
+          }  
+        }
+
+        .topics-wrapper::after {
+          content: "";
+          position: absolute;
+          display: block;
+          pointer-events: none;
+          width: 16px;
+          height: 16px;
+          top: 50%;
+          right: 12px;
+          transform: translateY(-50%);
+          background-image: url(svg/ic_arrow-down.svg);
+          background-repeat: no-repeat;
+          @media (min-width: $screen-desktop-min) {
+            right: 16px;
+          }
+        }
+
+        textarea {
+          border-radius: 4px;
+          box-sizing: border-box;
+          border: 1px solid $mischka;
+          padding: 12px;
+          font-size: 12px;
+          font-family: $sec-font;
+          color: $black;
+          @media (min-width: $screen-tablet-min) {
+            font-size: 14px;
+            border-radius: 6px;
+          }
+          @media (min-width: $screen-desktop-min) {
+            font-size: 16px;
+            border-radius: 8px;
+            min-height: 52px;
+            padding: 14px 44px 14px 14px;
+          }
+    
+          &:focus {
+            outline: none;
+            border-color: $persimmon;
+          }
+
+          &::placeholder {
+            color: $spun-pearl;
+          }
+        }
+      }
+
+      .wrapper {
+        @media (min-width: $screen-tablet-min) {
+          display: flex;
+        }
+      }
+
+      button {
+        @include pr-btn;
+        padding: 12px;
+        width: 100%;
+        border-radius: 4px;
+
+        @media (min-width: $screen-tablet-min) {
+          border-radius: 6px;
+        }
+
+        @media (min-width: $screen-desktop-min) {
+          padding: 16px;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  &__img-wrapper {
+    img {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+
+      @media (min-width: $screen-tablet-min) {
+        display: none;
+      } 
+    }
+  }
 }

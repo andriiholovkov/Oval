@@ -7,6 +7,30 @@
 @import "app/scss/pricing.scss";
 @import "app/scss/contacts.scss";
 
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+    @media (min-width: $screen-tablet-min) and (max-width: $screen-tablet-max) {
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 992px;
+    }
+  
+    @media (min-width: $screen-desktop-min) {
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 1200px;
+    }
+  }
+
 .header {
     background-color: $white;
 
@@ -103,6 +127,10 @@
             }
         }
     }
+}
+
+.header-gray {
+    background-color: $alabaster;
 }
 
 .simpler-tool {

@@ -23,29 +23,7 @@ $screen-desktop-min: 1200px;
 $screen-mobile-max: $screen-tablet-min - 1;
 $screen-tablet-max: $screen-desktop-min - 1;
 
-.container {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  
-  @media (min-width: $screen-tablet-min) and (max-width: $screen-tablet-max) {
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 992px;
-  }
 
-  @media (min-width: $screen-desktop-min) {
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
-  }
-}
 
 
 
