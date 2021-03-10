@@ -5,12 +5,16 @@
 @import "app/scss/mixins.scss";
 @import "app/scss/archive.scss";
 @import "app/scss/pricing.scss";
+@import "app/scss/contacts.scss";
 
 .header {
     background-color: $white;
-    height: $spacing-16;
-    display: flex;
-    justify-content: space-between;
+
+    .container {
+        height: $spacing-16;
+        display: flex;
+        justify-content: space-between;
+    }
 
     .navigation {
         display: flex;

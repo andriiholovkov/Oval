@@ -61,20 +61,14 @@ function fonts() {
     .pipe(dest("dist/fonts"));
 }
 
-/*
-function slick() {
-  return src("app/slick/**")
-    .pipe(dest("dist/slick"));
-}
-*/
-
 function clear() {
   return del('dist')
 }
 
 function start() {
   sync.init({
-    server: './dist'
+    server: './dist',
+    index: 'contacts.html'
   })
 
   watch('app/**.html', series(html)).on('change', sync.reload),
