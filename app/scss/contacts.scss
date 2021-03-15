@@ -1,10 +1,5 @@
-@import "app/scss/reset.scss";
-@import "app/scss/fonts.scss";
-@import "app/scss/colors.scss";
-@import "app/scss/loyaout.scss";
-@import "app/scss/mixins.scss";
-@import "app/scss/archive.scss";
-@import "app/scss/pricing.scss";
+@import "app/scss/_variables.scss";
+@import "app/scss/_mixins.scss";
 
 .talk {
   @include padd-vert($spacing-06, $spacing-04);
@@ -136,12 +131,14 @@
         font-family: $sec-font;
         @include font-set-01(12px, 18px, 600);
         color: $white;
+
         @media (min-width: $screen-desktop-min) {
           @include font-set-01(16px, 19px, 400);
         }
 
         &:first-child {
           @include font-set-01(12px, 18px, 400);
+
           @media (min-width: $screen-desktop-min) {
             @include font-set-01(14px, 22px, 600);
           }
@@ -159,12 +156,14 @@
         font-family: $sec-font;
         @include font-set-01(14px, 20px, 600);
         color: $persimmon;
+
         @media (min-width: $screen-desktop-min) {
           @include font-set-01(16px, 19px, 400);
         }
 
         &:first-child {
           @include font-set-01(12px, 18px, 400);
+          
           @media (min-width: $screen-desktop-min) {
             @include font-set-01(14px, 22px, 600);
           }
@@ -284,11 +283,13 @@
           padding: 12px;
           font-size: 12px;
           font-family: $sec-font;
+
           @media (min-width: $screen-tablet-min) {
             max-width: 144px;
             font-size: 14px;
             border-radius: 6px;
           }
+
           @media (min-width: $screen-desktop-min) {
             max-width: 214px;
             font-size: 16px;
@@ -311,6 +312,7 @@
           @include font-set-01(12px, 18px,500);
             font-family: $sec-font;
             margin-bottom: 5px;
+
             @media (min-width: $screen-tablet-min) {
               @include font-set-01(14px, 22px, 500);
             }
@@ -324,21 +326,24 @@
           position: relative;
 
           select {
+            font-family: $sec-font;
+            font-size: 12px;
+            color: $black;
             width: 100%;
             min-height: 40px;
             padding: 12px 32px 12px 12px;
             border: 1px solid $mischka;
             border-radius: 4px;
             appearance: none;
-            width: 100%;
-            font-family: $sec-font;
-            font-size: 12px;
-            color: $black;
+            background-color: $white;
+            
+
             @media (min-width: $screen-tablet-min) {
               font-size: 14px;
               border-radius: 6px;
               padding: 12px 36px 12px 12px;
             }
+
             @media (min-width: $screen-desktop-min) {
               font-size: 16px;
               border-radius: 8px;
@@ -352,7 +357,7 @@
             }
 
             option {
-              @include font-set-01(12px, 18px, 400);
+              @include font-set-01(16px, 26px, 400);
               font-family: $sec-font;
               color: $black;
             }
@@ -371,6 +376,7 @@
           transform: translateY(-50%);
           background-image: url(svg/ic_arrow-down.svg);
           background-repeat: no-repeat;
+
           @media (min-width: $screen-desktop-min) {
             right: 16px;
           }
@@ -384,10 +390,12 @@
           font-size: 12px;
           font-family: $sec-font;
           color: $black;
+
           @media (min-width: $screen-tablet-min) {
             font-size: 14px;
             border-radius: 6px;
           }
+
           @media (min-width: $screen-desktop-min) {
             font-size: 16px;
             border-radius: 8px;
@@ -450,6 +458,7 @@
   @media (min-width: $screen-tablet-min) {
     @include padd-vert(50px, 50px);
   }
+
   @media (min-width: $screen-desktop-min) {
     @include padd-vert(76px, 90px);
   }
@@ -460,10 +469,12 @@
     text-align: center;
     margin: 0 auto;
     margin-bottom: $spacing-05;
+
     @media (min-width: $screen-tablet-min) {
       @include h2-tablet;
       margin-bottom: $spacing-08;
     }
+
     @media (min-width: $screen-desktop-min) {
       @include h2-desktop;
       margin-bottom: $spacing-14;
@@ -483,6 +494,7 @@
       align-items: flex-start;
       margin: 0 auto;
     }
+
     @media (min-width: $screen-desktop-min) {
       max-width: 1140px;
     }
@@ -505,6 +517,7 @@
       height: 60px;
       padding: 0px 24px;
     }
+
     @media (min-width: $screen-desktop-min) {
       max-width: 350px;
       height: 80px;
@@ -538,10 +551,12 @@
 
     & > svg {
       margin-right: 14px;
+
       @media (min-width: $screen-tablet-min) {
         margin-left: 4px;
         margin-right: $spacing-02;
       }
+
       @media (min-width: $screen-desktop-min) {
         margin-right: 14px;
         margin-right: $spacing-03;
@@ -592,6 +607,7 @@
       height: 38px;
       margin-right: $spacing-02;
     }
+
     @media (min-width: $screen-desktop-min) {
       width: 42px;
       height: 42px;
@@ -602,9 +618,11 @@
 
 .offices {
   @include padd-vert($spacing-06, $spacing-06);
+
   @media (min-width: $screen-tablet-min) {
     @include padd-vert(50px, 40px);
   }
+
   @media (min-width: $screen-desktop-min) {
     @include padd-vert(90px, 90px);
   }
@@ -612,9 +630,11 @@
   &__intro {
     text-align: center;
     margin-bottom: $spacing-05;
+
     @media (min-width: $screen-tablet-min) {
       margin-bottom: $spacing-07;
     }
+
     @media (min-width: $screen-desktop-min) {
       display: flex;
       justify-content: flex-start;
@@ -631,6 +651,7 @@
       @media (min-width: $screen-tablet-min) {
         @include h2-tablet;
       }
+
       @media (min-width: $screen-desktop-min) {
         @include h2-desktop;
         margin: 0 310px 0 0;
@@ -646,6 +667,7 @@
         @include subheading-tablet;
         max-width: 380px;
       }
+
       @media (min-width: $screen-desktop-min) {
         @include subheading-desktop;
         max-width: 420px;
@@ -658,6 +680,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     @media (min-width: $screen-desktop-min) {
       flex-direction: row;
       justify-content: space-between;
@@ -671,10 +694,12 @@
     max-width: 420px;
     width: 100%;
     margin-bottom: $spacing-06;
+
     @media (min-width: $screen-tablet-min) {
       max-width: 680px;
       margin-bottom: $spacing-07;
     }
+
     @media (min-width: $screen-desktop-min) {
       max-width: 540px;
       margin-bottom: 0;
@@ -685,12 +710,14 @@
       flex-direction: column;
       text-align: left;
       padding: 16px 20px;
+
       @media (min-width: $screen-tablet-min) {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         padding: 20px 25px;
       }
+
       @media (min-width: $screen-desktop-min) {
         display: flex;
         flex-direction: column;
@@ -699,9 +726,11 @@
 
       &__head-wrapper {
         margin-bottom: $spacing-02;
+
         @media (min-width: $screen-tablet-min) {
           margin-bottom: 0;
         }
+
         @media (min-width: $screen-desktop-min) {
           margin-bottom: $spacing-05;
         }
@@ -712,6 +741,7 @@
         font-family: $sec-font;
         color: $ship-gray;
         margin-bottom: 8px;
+
         @media (min-width: $screen-tablet-min) {
           @include font-set-01(22px, 32px, 600);
           margin-bottom: 10px;
@@ -722,17 +752,19 @@
         @include font-set-01(14px, 22px, 400);
         font-family: $sec-font;
         color: $mid-gray;
+
         @media (min-width: $screen-tablet-min) {
           @include font-set-01(18px, 28px, 400);
         }
       }
 
       &__link {
+        @include font-set-01(14px, 22px, 600);
         display: flex;
         align-items: center;
-        @include font-set-01(14px, 22px, 600);
         font-family: $sec-font;
         color: $persimmon;
+
         @media (min-width: $screen-tablet-min) {
           @include font-set-01(18px, 28px, 600);
         }
@@ -742,6 +774,7 @@
           align-items: center;
           padding-top: 2px;
           margin-left: 5px;
+
           @media (min-width: $screen-tablet-min) {
             padding-top: 1px;
           }
@@ -755,6 +788,7 @@
     height: 170px;
     border-radius: 8px 8px 0px 0px;
     border-bottom: 1px solid $mischka;
+
     @media (min-width: $screen-desktop-min) {
       height: 280px;
     }
@@ -767,5 +801,216 @@
       left: 0;
       object-fit: cover;
     } 
+  }
+}
+
+.faq {
+  @include padd-vert($spacing-06, 72px);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  @media (min-width: $screen-tablet-min) {
+    @include padd-vert(50px, 50px);
+  }
+
+  @media (min-width: $screen-desktop-min) {
+    @include padd-vert(90px, 120px);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__intro {
+    text-align: center;
+    margin-bottom: $spacing-03;
+    position: relative;
+
+    @media (min-width: $screen-tablet-min) {
+      margin-bottom: $spacing-08;
+    }
+
+    @media (min-width: $screen-desktop-min) {
+      max-width: 440px;
+      text-align: left;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 48%;
+        left: -24%;
+        background-image: url(img/faq-pattern-bg_1140.jpg);
+        width: 394px;
+        height: 337px;
+        z-index: 10;
+      }
+    }
+
+    h2 {
+      @include h2-mobile; 
+      margin-bottom: $spacing-01;
+
+      @media (min-width: $screen-tablet-min) {
+        @include h2-tablet;
+        margin-bottom: $spacing-04; 
+      }
+
+      @media (min-width: $screen-desktop-min) {
+        @include h2-desktop;
+      }
+    }
+  
+    p {
+      @include subheading-mobile;
+      max-width: 300px;
+      margin: 0 auto;
+
+      @media (min-width: $screen-tablet-min) {
+        @include subheading-tablet;
+        max-width: 430px;
+        margin-bottom: $spacing-08;
+      }
+
+      @media (min-width: $screen-desktop-min) {
+        @include subheading-desktop;
+        margin-bottom: 0px;
+        margin: 0;
+      }
+      
+      a {
+        cursor: pointer;
+        text-decoration: underline;
+        color: $persimmon;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__question-wrap {
+    .question {
+      cursor: pointer;
+      max-width: 420px;
+      border-bottom: 1px solid $mischka;
+      padding: 16px;
+      margin: 0 auto;
+
+      @media (min-width: $screen-tablet-min) {
+        padding: 16px 30px;
+      }
+
+      @media (min-width: $screen-desktop-min) {
+        padding: 24px 30px 24px 40px;
+      }
+
+      &:hover {
+        .question__icon:before {
+          background-color: $persimmon;
+        }
+
+        .question__icon:after {
+          background-color: $persimmon;
+        }
+      }
+
+      @media (min-width: $screen-tablet-min) {
+        max-width: 680px;
+      }
+
+      @media (min-width: $screen-desktop-min) {
+        max-width: 673px;
+      }
+
+      &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+      &__title {
+        @include font-set-01(16px, 24px, 500);
+        display: block;
+        font-family: $sec-font;
+        padding-right: 32px;
+        @media (min-width: $screen-desktop-min) {
+          @include font-set-01(20px, 30px, 500);
+          max-width: 450px;
+        }
+      }
+
+      &__icon {
+        width: 12px;
+        height: 12px;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 5px;
+          right: 0px;
+          width: 12px;
+          height: 2px;
+          background-color: $mid-gray;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          right: 0px;
+          width: 12px;
+          height: 2px;
+          background-color: $mid-gray;
+          opacity: 1;
+          transform: rotate(90deg);
+        }
+      }
+  
+      &__row-content {
+        overflow: hidden;
+        max-height: 0px;
+      }
+    }
+
+    .active {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.04);
+
+      &.question {
+        border-bottom: 0px;
+      }
+
+      .question__title {
+        color: $persimmon;
+      }
+
+      .question__row-content {
+        @include font-set-01(14px, 24px, 400);
+        font-family: $sec-font;
+        color: $mid-gray;
+        margin-top: $spacing-01;
+        overflow: visible;
+        max-height: inherit;
+        padding-right: 32px;
+
+        @media (min-width: $screen-desktop-min) {
+          @include font-set-01(16px, 26px, 400);
+        }
+      }
+  
+      .question__icon:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: 0px;
+        width: 12px;
+        height: 2px;
+        background-color: $persimmon;
+        opacity: 1;
+        transform: rotate(180deg);
+      }
+    }
   }
 }

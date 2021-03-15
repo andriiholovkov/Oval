@@ -1,8 +1,5 @@
-@import "app/scss/loyaout.scss";
-@import "app/scss/colors.scss";
-@import "app/scss/fonts.scss";
-@import "app/scss/mixins.scss";
-
+@import "app/scss/_variables.scss";
+@import "app/scss/_mixins.scss";
 
 .pricing {
   &__switcher {
@@ -310,5 +307,3 @@
     }
   }
 }
-
-
